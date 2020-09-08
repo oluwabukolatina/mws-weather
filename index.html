@@ -10,94 +10,56 @@
   <script src="https://use.fontawesome.com/152fa945b9.js"></script>
 </head>
 
-<body
-onload="displayStored()"
->
-
-<body>
-  <div class="container">
-    <div class="top">
-      <div class="search">
-        <button id="searchBtn">
-          <i class="fa fa-search"></i>
-          Click to get weather information
-        </button>
-      </div>
-      <div class="place">
-        <p class="name">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>New York, NY, US</p>
-        <p id="todayDate" class="date"></p>
-      </div>
-      <div class="weather-details">
-        <div class="preview">
-          <img id="src" alt="">
-          <!-- <i class="fa fa-cloud" aria-hidden="true"></i> -->
-          <div class="preview-content">
-            <p id="temperature"></p>
-            <!-- <p id="main">light rain</p> -->
-            <p id="description"></p>
-          </div>
+<body onload="displayStored()">
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="search">
+          <button id="searchBtn">
+            <i class="fa fa-search"></i>
+            Click to get weather information
+          </button>
         </div>
-        <div class="details">
-          <div class="detail">
-            <p class="detail-heading">Feels Like</p>
-            <p id="feels" class="detail-item"></p>
-            <i class="fa fa-temperature-high"></i>
-            <img src="img/temperature.png" alt="">
+        <div class="place">
+          <p class="name">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>New York, NY, US</p>
+          <p id="todayDate" class="date"></p>
+        </div>
+        <div class="weather-details">
+          <div class="preview">
+            <img id="src" alt="">
+            <!-- <i class="fa fa-cloud" aria-hidden="true"></i> -->
+            <div class="preview-content">
+              <p id="temperature"></p>
+              <!-- <p id="main">light rain</p> -->
+              <p id="description"></p>
+            </div>
           </div>
-          <div class="detail">
-            <p class="detail-heading">Humidity</p>
-            <p id="humidity" class="detail-item"></p>
-            <img src="img/humidity.png" alt="">
+          <div class="details">
+            <div class="detail">
+              <p class="detail-heading">Feels Like</p>
+              <p id="feels" class="detail-item"></p>
+              <i class="fa fa-temperature-high"></i>
+              <img src="img/temperature.png" alt="">
+            </div>
+            <div class="detail">
+              <p class="detail-heading">Humidity</p>
+              <p id="humidity" class="detail-item"></p>
+              <img src="img/humidity.png" alt="">
 
-          </div>
-          <div class="detail">
-            <p class="detail-heading">Wind Speed</p>
-            <p id="wind" class="detail-item"></p>
-            <i class="fas fa-wind"></i>
-            <img src="img/wind.png" alt="">
+            </div>
+            <div class="detail">
+              <p class="detail-heading">Wind Speed</p>
+              <p id="wind" class="detail-item"></p>
+              <i class="fas fa-wind"></i>
+              <img src="img/wind.png" alt="">
+            </div>
           </div>
         </div>
       </div>
+      <div class="results" />
     </div>
-    <div class="results">
-      <div class="result-details">
-        <div class="result-preview">
-          <img id="result-src" alt="">
-          <div class="preview-content">
-            <p id="result-temperature"></p>
-            <p id="result-description"></p>
-          </div>
-        </div>
-        <div class="details">
-          <div class="detail">
-            <p class="detail-heading">Feels Like</p>
-            <p id="result-feels" class="detail-item">
-
-            </p>
-            <i class="fa fa-temperature-high"></i>
-            <img src="img/temperature.png" alt="">
-          </div>
-          <div class="detail">
-            <p class="detail-heading">Humidity</p>
-            <p id="result-humidity" class="detail-item"></p>
-            <img src="img/humidity.png" alt="">
-
-          </div>
-          <div class="detail">
-            <p class="detail-heading">Wind Speed</p>
-            <p id="result-wind" class="detail-item">
-
-            </p>
-            <i class="fas fa-wind"></i>
-            <img src="img/wind.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 
 </html>

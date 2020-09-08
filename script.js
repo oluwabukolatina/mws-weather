@@ -10,12 +10,12 @@ const displayStored = () => {
     console.log(JSON.parse(sessionStorage.getItem('stored')));
     JSON.parse(sessionStorage.getItem('stored')).forEach(data => {
       let image = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        output += `
- <div class="result-preview">
-           <img id="result-src" alt="" src="${image}">
-           <div class="preview-content">
-           <p id="result-temperature">${Math.round(data.temp)}°c</p>
-           <p id="result-description">${data.weather[0].description}</p>
+      output += `
+        <div class="result-preview">
+          <img id="result-src" alt="" src="${image}">
+          <div class="preview-content">
+          <p id="result-temperature">${Math.round(data.temp)}°c</p>
+          <p id="result-description">${data.weather[0].description}</p>
           </div>
         </div>
         <div class="details">
@@ -56,16 +56,16 @@ const getWeatherResults = () => {
 searchButton.addEventListener('click', getWeatherResults);
 const displayWeatherResult = (params) => {
     console.log(`http://openweathermap.org/img/wn/${params.current.weather[0].icon}@2x.png`)
-         let temperature = document.getElementById('temperature');
-         temperature.innerHTML = `${Math.round(params.current.temp)}°c`;
-         let weatherIcon = document.getElementById("src");
-         weatherIcon.src = `http://openweathermap.org/img/wn/${params.current.weather[0].icon}@2x.png`;
-         let description = document.getElementById("description");
-         description.innerHTML = params.current.weather[0].description;
-         let feels = document.getElementById('feels');
-         feels.innerHTML = `${params.current.feels_like}°c`;
-         let humidity = document.getElementById('humidity');
-         humidity.innerHTML = `${params.current.humidity}%`;
-         let wind = document.getElementById('wind');
-         wind.innerHTML = `${params.current.wind_speed}mph`;
+        let temperature = document.getElementById('temperature');
+        temperature.innerHTML = `${Math.round(params.current.temp)}°c`;
+        let weatherIcon = document.getElementById("src");
+        weatherIcon.src = `http://openweathermap.org/img/wn/${params.current.weather[0].icon}@2x.png`;
+        let description = document.getElementById("description");
+        description.innerHTML = params.current.weather[0].description;
+        let feels = document.getElementById('feels');
+        feels.innerHTML = `${params.current.feels_like}°c`;
+        let humidity = document.getElementById('humidity');
+        humidity.innerHTML = `${params.current.humidity}%`;
+        let wind = document.getElementById('wind');
+        wind.innerHTML = `${params.current.wind_speed}mph`;
 };
