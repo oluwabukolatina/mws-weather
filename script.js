@@ -6,9 +6,9 @@ const todaysDate = (new Date()).toString().split(' ').splice(1, 3).join(' ');
 document.getElementById("todayDate").innerHTML = todaysDate;
 const searchButton = document.getElementById('searchBtn');
 const displayStored = () => {
-        let output = '<div class="result-details">';
-    console.log(JSON.parse(sessionStorage.getItem('stored')));
-    JSON.parse(sessionStorage.getItem('stored')).forEach(data => {
+  let output = '<div class="result-details">';
+  
+  JSON.parse(sessionStorage.getItem('store')) !== null ? JSON.parse(sessionStorage.getItem('store')).forEach(data => {
       let image = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       output += `
         <div class="result-preview">
@@ -18,7 +18,7 @@ const displayStored = () => {
           <p id="result-description">${data.weather[0].description}</p>
           </div>
         </div>
-        <div class="details">
+        <div class="result-details-details">
           <div class="detail">
             <p class="detail-heading">Feels Like</p>
             <p id="result-feels" class="detail-item">${Math.round(data.feels_like)}°c</p>
@@ -38,7 +38,7 @@ const displayStored = () => {
           </div>
         </div>
       `;
-    });
+    }) : null;
     output += '</div>';
     document.querySelector('.results').innerHTML = output;
 };
@@ -46,16 +46,41 @@ const getWeatherResults = () => {
     fetch(`${api.baseUrl}${api.key}`)
         .then(response => response.json())
         .then((data) => {
-            displayWeatherResult(data);
-            const stored = JSON.parse(sessionStorage.getItem('stored')) !== null ? JSON.parse(sessionStorage.getItem('stored')) : []
-            const storedWeather = stored.concat(new Array(data.current));
-            sessionStorage.setItem('stored', JSON.stringify(storedWeather));
+          displayWeatherResult(data);
+          
+          const store =
+            JSON.parse(sessionStorage.getItem("store")) !== null
+              ? JSON.parse(sessionStorage.getItem("store"))
+              : [];
+          store.unshift(data.current);
+          sessionStorage.setItem("store", JSON.stringify(store));
+        
+
             displayStored()
+
+            
         })
+};
+const onLoad = () => {
+  fetch(`${api.baseUrl}${api.key}`)
+      .then(response => response.json())
+      .then((data) => {
+        displayWeatherResult(data);
+        
+        const store =
+          JSON.parse(sessionStorage.getItem("store")) !== null
+            ? JSON.parse(sessionStorage.getItem("store"))
+            : [];
+        store.unshift(data.current);
+        sessionStorage.setItem("store", JSON.stringify(store));
+      
+
+
+          
+      })
 };
 searchButton.addEventListener('click', getWeatherResults);
 const displayWeatherResult = (params) => {
-    console.log(`http://openweathermap.org/img/wn/${params.current.weather[0].icon}@2x.png`)
         let temperature = document.getElementById('temperature');
         temperature.innerHTML = `${Math.round(params.current.temp)}°c`;
         let weatherIcon = document.getElementById("src");
@@ -63,7 +88,7 @@ const displayWeatherResult = (params) => {
         let description = document.getElementById("description");
         description.innerHTML = params.current.weather[0].description;
         let feels = document.getElementById('feels');
-        feels.innerHTML = `${params.current.feels_like}°c`;
+        feels.innerHTML = `${Math.round(params.current.feels_like)}°c`;
         let humidity = document.getElementById('humidity');
         humidity.innerHTML = `${params.current.humidity}%`;
         let wind = document.getElementById('wind');

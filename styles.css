@@ -1,133 +1,135 @@
 body {
-         font-family: 'Varela Round', sans-serif;
+    font-family: 'Varela Round', sans-serif;
 }
 
 * {
-         box-sizing: border-box;
-         padding: 0;
-         margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 .container {
-         /* margin-left: 0.3em; */
-         /* margin-right: 0.3em; */
-         /* padding-right: 0.3em; */
-         /* padding-left: 0.3em; */
+    /* margin-left: 0.3em; */
+    /* margin-right: 0.3em; */
+    /* padding-right: 0.3em; */
+    /* padding-left: 0.3em; */
 }
 
 button {
-         font-size: 1.2em;
-         background: #0d1125;
-         color: #fff;
-         cursor: pointer;
-         border: none;
-         /* color: white; */
-         padding: 0.5em 2.0em;
-         border-radius: 3px;
+    font-size: 1.2rem;
+    background: #0d1125;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    /* color: white; */
+    padding: 0.5rem 2.0rem;
+    border-radius: 3px;
 }
 
 .top {
-         color: #f5fafd;
-         background: url("img/NYC.jpg") no-repeat center;
-         background-size: cover;
-         position: relative;
-         min-height: 50vh;
+    color: #f5fafd;
+    background: url("img/NYC.jpg") no-repeat center;
+    background-size: cover;
+    position: relative;
+    min-height: 50vh;
 }
 
 .name {
-         font-size: 2.3em;
+    font-size: 2.3rem;
 
 }
 
 .date {
-         font-style: italic;
-         font-size: 1.4em;
+    font-style: italic;
+    font-size: 1.4rem;
 }
 
 #temperature {
-         font-size: 1.9em;
+    font-size: 1.9rem;
 }
 
 input {
-         padding: 6px;
-         margin-top: 8px;
-         font-size: 17px;
-         width: 90%;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    width: 90%;
 }
 
 
 
 
 .place {
-         text-align: center;
-         letter-spacing: 5px;
+    text-align: center;
+    letter-spacing: 5px;
 }
 
 .weather-details {
-         display: grid;
-         grid-template-columns: auto auto;
-         grid-gap: 3%;
-         padding: 2%;
-         letter-spacing: 2px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 3%;
+    padding: 2%;
+    letter-spacing: 2px;
 
 }
 
 .search {
-         padding-top: 1%;
-         padding-left: 1%;
+    padding-top: 1%;
+    padding-left: 1%;
 }
 
 i {
-         font-size: 1.5em;
-         margin: auto;
+    font-size: 1.5rem;
+    margin: auto;
 }
 
 
 .preview {
-         /* background: #fcb017; */
-         /* background: #def2fd; */
-         background: #0d1125;
-         /* background: wheat; */
-         color: #f5fafd;
-         border-radius: 5px;
-         display: grid;
-         grid-template-columns: 1fr 1fr;
-         padding: 4% 1%;
+    /* background: #fcb017; */
+    /* background: #def2fd; */
+    background: #0d1125;
+    /* background: wheat; */
+    color: #f5fafd;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4% 1%;
 }
 
 .preview-content {
-         text-align: center;
+    text-align: center;
 
-         padding-top: 8%;
+    padding-top: 8%;
 }
 
 .preview-content #temperature {
-         font-size: 55px;
+    font-size: 55px;
 }
+
 .preview-content #result-temperature {
     font-size: 55px;
 }
 
 #src {
-         width: 55%;
+    width: 55%;
 }
 
 .details {
-         background: #def2fd;
-         color: black;
-         padding: 1%;
-         border-radius: 5px;
-         text-align: center;
-         display: grid;
-         grid-template-columns: 1fr 1fr 1fr;
+    background: #def2fd;
+    color: black;
+    padding: 1%;
+    border-radius: 5px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
+
 .results {
-         /* background: #def2fd; */
-         /* margin-top: 1%; */
-         margin-left: 1%;
-         margin-right: 1%;
-         /* background: #0d1125; */
+    /* background: #def2fd; */
+    /* margin-top: 1%; */
+    margin-left: 1%;
+    margin-right: 1%;
+    /* background: #0d1125; */
 
 
 }
@@ -138,46 +140,93 @@ i {
     grid-gap: 3%;
     padding: 2%;
     letter-spacing: 5px;
+
+
 }
 
+.result-details-details {
+    background: #def2fd;
+    color: black;
+    padding: 1%;
+    border-radius: 5px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* .result-details-details .detail{display: flex;} */
+
 .result-preview {
-         /* background: #fcb017; */
-         /* background: #def2fd; */
-         background: #0d1125;
-         color: #def2fd;
-         padding: 3% 1% 5% 4%;
+    /* background: #fcb017; */
+    /* background: #def2fd; */
+    background: #0d1125;
+    color: #def2fd;
+    padding: 3% 1% 5% 4%;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 .result-detail {
-         /* background: #def2fd; */
-         /* color: black; */
-         background: #0d1125;
-         color: #def2fd;
-         padding: 1%;
-         border-radius: 5px;
-         display: flex;
+    /* background: #def2fd; */
+    /* color: black; */
+    background: #0d1125;
+    color: #def2fd;
+    padding: 1%;
+    border-radius: 5px;
+    display: flex;
 }
 
 .detail {
-         padding-top: 8%;
-         /* background: red; */
+    padding-top: 8%;
+    /* background: red; */
 }
 
 .detail-heading {
-         font-size: 26px;
+    font-size: 26px;
 }
 
 .detail-item {
-         font-size: 20px;
-         padding-top: 3%;
+    font-size: 20px;
+    padding-top: 3%;
 
 }
 
 .detail img {
-         width: 30px;
-         padding-top: 1em;
+    width: 30px;
+    padding-top: 1rem;
 }
 
-@media screen and (max-width: 768px) {}
+@media (max-width: 320px) {
+    .result-details-details {
+        display: block;
+    }
+
+    .preview-content {
+        display: inline-grid;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    #result-src {
+        display: none;
+    }
+
+    .detail-heading {
+        font-size: 15px;
+    }
+
+    .result-details {
+        padding-left: 0%;
+        padding-right: 0%;
+
+    }
+
+    .preview-content #result-temperature {
+        font-size: 38px;
+    }
+
+    .detail-item {
+        font-size: 12px;
+    }
+}
